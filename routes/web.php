@@ -20,3 +20,9 @@ Route::get('/', function () {
 Route::get('/foo', function () {
     return "Hello from foo";
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/recipes', [App\Http\Controllers\RecipeController::class, 'index']);
