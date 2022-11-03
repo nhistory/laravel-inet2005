@@ -14,7 +14,11 @@ class RecipeController extends Controller
      */
     public function index()
     {
-        return Recipe::all();
+
+        $recipes = Recipe::all();
+//        ddd($recipes);
+
+        return view('recipes.index', compact('recipes'));
     }
 
     /**
@@ -44,9 +48,11 @@ class RecipeController extends Controller
      * @param  \App\Models\Recipe  $recipe
      * @return \Illuminate\Http\Response
      */
-    public function show(Recipe $recipe)
+    public function show(Recipe $recipe) //$id)
     {
-        //
+//        dd($recipe);
+//        $recipe = Recipe::find($id);
+        return view('recipes.show', compact('recipe'));
     }
 
     /**
